@@ -9,7 +9,7 @@ namespace TelCo.ColorCoder
         {
             TestColorUtility();
         }
-
+        // this method tests the GetColorFromPairNumber and GetPairNumberFromColor detailed testcases are written in unit tests 
         private static void TestColorUtility()
         {
             int pairNumber = 4;
@@ -17,23 +17,9 @@ namespace TelCo.ColorCoder
             Debug.Assert(testPair1.MajorColor == Color.White);
             Debug.Assert(testPair1.MinorColor == Color.Brown);
 
-            pairNumber = 5;
-            testPair1 = ColorUtility.GetColorFromPairNumber(pairNumber);
-            Debug.Assert(testPair1.MajorColor == Color.White);
-            Debug.Assert(testPair1.MinorColor == Color.SlateGray);
-
-            pairNumber = 23;
-            testPair1 = ColorUtility.GetColorFromPairNumber(pairNumber);
-            Debug.Assert(testPair1.MajorColor == Color.Violet);
-            Debug.Assert(testPair1.MinorColor == Color.Green);
-
             ColorModel testPair2 = new ColorModel { MajorColor = Color.Yellow, MinorColor = Color.Green };
             pairNumber = ColorUtility.GetPairNumberFromColor(testPair2);
             Debug.Assert(pairNumber == 18);
-
-            testPair2 = new ColorModel { MajorColor = Color.Red, MinorColor = Color.Blue };
-            pairNumber = ColorUtility.GetPairNumberFromColor(testPair2);
-            Debug.Assert(pairNumber == 6);
         }
     }
 }
