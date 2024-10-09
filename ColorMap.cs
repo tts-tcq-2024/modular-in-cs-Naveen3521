@@ -22,7 +22,9 @@ namespace TelCo.ColorCoder
             Color.SlateGray 
     };
 
+    //read only property For Major Color
     public static Color[] MajorColors => (Color[])majorColors.Clone();
+    //read only property for Minor Color
     public static Color[] MinorColors => (Color[])minorColors.Clone();
   }
 }
