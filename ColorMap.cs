@@ -4,7 +4,7 @@ namespace TelCo.ColorCoder
 {
   public static class ColorMap
   {
-    private static readonly Color[] majorColor = new Color[]
+    private static readonly Color[] majorColors = new Color[]
     {
             Color.White, 
             Color.Red, 
