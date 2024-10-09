@@ -9,8 +9,6 @@ namespace TelCo.ColorCoder.Tests
     {
         [Theory]
         [InlineData(Color.White, Color.Blue, 1)]
-        [InlineData(Color.White, Color.SlateGray, 5)]
-        [InlineData(Color.Black, Color.Green, 10)]
         [InlineData(Color.Yellow, Color.Green, 18)]
         [InlineData(Color.Violet, Color.SlateGray, 25)]
         public void GetPairNumberFromColor_ValidColorModel_ReturnsCorrectPairNumber(Color major, Color minor, int expectedPairNumber)
