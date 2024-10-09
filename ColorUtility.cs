@@ -23,7 +23,7 @@ namespace TelCo.ColorCoder
         {
             if (!pairNumber.HasValue)
             {
-                throw new ArgumentNullException(nameof(pairNumber), "Pair number cannot be null.");
+                throw new ArgumentNullException("Pair number cannot be null.");
             }
         }
 
