@@ -35,5 +35,18 @@ namespace TelCo.ColorCoder.Tests
             var exception = Assert.Throws<ArgumentException>(() => ColorUtility.GetPairNumberFromColor(invalidColorModel));
             Assert.Contains("Unknown Colors", exception.Message);
         }
+        [Theory]
+        [InlineData(Color.Empty, Color.Blue)]
+        [InlineData(Color.White, Color.Empty)]
+        [InlineData(Color.Empty, Color.Empty)]
+        public void GetPairNumberFromColor_EmptyColors_ThrowsArgumentException(Color major, Color minor)
+        {
+            // Arrange
+            var invalidColorModel = new ColorModel { MajorColor = major, MinorColor = minor };
+
+            // Act & Assert
+            var exception = Assert.Throws<ArgumentException>(() => ColorUtility.GetPairNumberFromColor(invalidColorModel));
+            Assert.Contains("Unknown Colors", exception.Message);
+        }
     }
 }
