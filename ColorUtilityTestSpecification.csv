@@ -1,0 +1,26 @@
+﻿Test Specification Document for GetColorFromPairNumber Method in ColorUtility ,,,,,,,
+Test Case ID,Test Case Name,Description,Input,	Expected Output,,,
+TC001,GetColorFromPairNumber_ValidPairNumber,Validates that the method correctly returns the major and minor colors for various valid pair numbers.,"1. Pair Number: 1
+2. Pair Number: 5
+3. Pair Number: 10
+4. Pair Number: 18
+5. Pair Number: 25","1. Major: Color.White, Minor: Color.Blue
+2. Major: Color.White, Minor: Color.SlateGray
+3. Major: Color.Black, Minor: Color.Green
+4. Major: Color.Yellow, Minor: Color.Green
+5. Major: Color.Violet, Minor: Color.SlateGray",,,
+TC002,GetColorFromPairNumber_InvalidPairNumber,Validates that the method throws an ArgumentOutOfRangeException for invalid pair numbers.,"1. Pair Number: 0
+2. Pair Number: 26","1. Exception: ArgumentOutOfRangeException with message containing ""outside the allowed range""
+2. Exception: ArgumentOutOfRangeException with message containing ""outside the allowed range",,,
+TC003,GetColorFromPairNumber_NullPairNumber_ThrowsArgumentNullException,Validates that the method throws an ArgumentOutOfRangeException if pair number is null.,1.PairNumber:null,"1.Expception:ArgumentNullException with message Containing""Pair number cannot be null.""",,,
+Test Specification Document for GetPairNumberFromColor Method in ColorUtility ,,,,,,,
+TC004,GetPairNumberFromColor_ValidColorModel,Validates that the method correctly returns the pair number for various valid major and minor color combinations.,"1. Major: Color.White, Minor: Color.Blue
+2. Major: Color.White, Minor: Color.SlateGray
+3. Major: Color.Black, Minor: Color.Green
+4. Major: Color.Yellow, Minor: Color.Green
+5. Major: Color.Violet, Minor: Color.SlateGray","1. Pair Number: 1
+2. Pair Number: 5
+3. Pair Number: 10
+4. Pair Number: 18
+5. Pair Number: 25",,,
+TC004,GetPairNumberFromColor_InvalidColorModel,Validates that the method throws an ArgumentException for invalid color combinations.,"1. Major: Color.Red, Minor: Color.Pink","1. Exception: ArgumentException with message containing ""Unknown Colors""",,,
