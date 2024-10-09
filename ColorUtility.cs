@@ -32,7 +32,7 @@ namespace TelCo.ColorCoder
 
             if (majorIndex == -1 || minorIndex == -1)
             {
-                throw new ArgumentException($"Unknown Colors: {pair}");
+                throw new ArgumentException($"Unknown Colors: {colorModel}");
             }
 
             return (majorIndex * ColorMap.MinorColors.Length) + (minorIndex + 1);
