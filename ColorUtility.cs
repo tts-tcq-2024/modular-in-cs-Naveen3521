@@ -20,12 +20,17 @@ namespace TelCo.ColorCoder
 
         private static void ValidatePairNumber(int? pairNumber)
         {
-            if (!pairNumber.HasValue || pairNumber < 1 || pairNumber > ColorMap.MajorColors.Length * ColorMap.MinorColors.Length)
+            if (pairNumber == null)
             {
-                throw new ArgumentException("Pair number is either null or outside the allowed range.");
+                throw new ArgumentNullException(nameof(pairNumber), "Pair number cannot be null.");
+            }
+
+            int maxPairNumber = ColorMap.MajorColors.Length * ColorMap.MinorColors.Length;
+            if (pairNumber < 1 || pairNumber > maxPairNumber)
+            {
+                throw new ArgumentOutOfRangeException(nameof(pairNumber), $"Argument PairNumber: {pairNumber} is outside the allowed range.");
             }
         }
-
         public static int GetPairNumberFromColor(ColorModel colorModel)
         {
             int majorIndex = Array.IndexOf(ColorMap.MajorColors, colorModel.MajorColor);
