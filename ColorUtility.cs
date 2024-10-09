@@ -4,8 +4,12 @@ namespace TelCo.ColorCoder
 {
     public static class ColorUtility
     {
-        public static ColorModel GetColorFromPairNumber(int pairNumber)
+        public static ColorModel GetColorFromPairNumber(int? pairNumber)
         {
+            if (pairNumber == null)
+            {
+                throw new ArgumentNullException("Pair number cannot be null.");
+            }
             int minorSize = ColorMap.MinorColors.Length;
             int majorSize = ColorMap.MajorColors.Length;
 
