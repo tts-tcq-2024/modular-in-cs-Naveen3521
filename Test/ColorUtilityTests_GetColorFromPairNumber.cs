@@ -1,6 +1,7 @@
 using System; 
 using System.Drawing;
 using Xunit;
+using TelCo.ColorCoder;
 
 namespace TelCo.ColorCoder.Tests
 {
