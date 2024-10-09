@@ -4,7 +4,7 @@ namespace TelCo.ColorCoder
 {
     public static class ColorUtility
     {
-        public static ColorPair GetColorFromPairNumber(int pairNumber)
+        public static ColorModel GetColorFromPairNumber(int pairNumber)
         {
             int minorSize = ColorMap.MinorColors.Length;
             int majorSize = ColorMap.MajorColors.Length;
@@ -18,14 +18,14 @@ namespace TelCo.ColorCoder
             int majorIndex = zeroBasedPairNumber / minorSize;
             int minorIndex = zeroBasedPairNumber % minorSize;
 
-            return new ColorPair
+            return new ColorModel
             {
                 MajorColor = ColorMap.MajorColors[majorIndex],
                 MinorColor = ColorMap.MinorColors[minorIndex]
             };
         }
 
-        public static int GetPairNumberFromColor(ColorPair pair)
+        public static int GetPairNumberFromColor(ColorModel pair)
         {
             int majorIndex = Array.IndexOf(ColorMap.MajorColors, pair.MajorColor);
             int minorIndex = Array.IndexOf(ColorMap.MinorColors, pair.MinorColor);
