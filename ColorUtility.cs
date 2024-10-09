@@ -2,7 +2,7 @@ using System;
 
 namespace TelCo.ColorCoder
 {
-    public static class ColorUtility
+    public static class ColorUtility 
     {
         public static ColorModel GetColorFromPairNumber(int? pairNumber)
         {
