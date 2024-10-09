@@ -33,5 +33,17 @@ namespace TelCo.ColorCoder.Tests
             var exception = Assert.Throws<ArgumentOutOfRangeException>(() => ColorUtility.GetColorFromPairNumber(0));
             Assert.Contains("outside the allowed range", exception.Message);
         }
+
+        [Fact]
+        public void GetColorFromPairNumber_NullPairNumber_ThrowsArgumentNullException()
+        {
+            // Arrange
+            int? nullPairNumber = null;
+
+            // Act & Assert
+            var exception = Assert.Throws<ArgumentNullException>(() => ColorUtility.GetColorFromPairNumber(nullPairNumber));
+            Assert.Equal("pairNumber", exception.ParamName);
+            Assert.Contains("Pair number cannot be null.", exception.Message);
+        }
     }
 }
