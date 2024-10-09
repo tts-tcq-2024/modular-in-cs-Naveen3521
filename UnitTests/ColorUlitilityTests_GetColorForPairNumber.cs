@@ -23,8 +23,11 @@ namespace TelCo.ColorCoder.Tests
             Assert.Equal(expectedMinor, result.MinorColor);
         }
 
-        [Fact]
-        public void GetColorFromPairNumber_InvalidPairNumber_ThrowsArgumentOutOfRangeException()
+        [Theory]
+        [InlineData(0)]
+        [InlineData(-1)]
+        [InlineData(26)]
+        public void GetColorFromPairNumber_InvalidPairNumber_ThrowsArgumentOutOfRangeException(int invalidPairNumber)
         {
             // Act & Assert
             var exception = Assert.Throws<ArgumentOutOfRangeException>(() => ColorUtility.GetColorFromPairNumber(0));
