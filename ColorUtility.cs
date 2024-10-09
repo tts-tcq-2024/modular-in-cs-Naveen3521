@@ -25,10 +25,10 @@ namespace TelCo.ColorCoder
             };
         }
 
-        public static int GetPairNumberFromColor(ColorModel pair)
+        public static int GetPairNumberFromColor(ColorModel colorModel)
         {
-            int majorIndex = Array.IndexOf(ColorMap.MajorColors, pair.MajorColor);
-            int minorIndex = Array.IndexOf(ColorMap.MinorColors, pair.MinorColor);
+            int majorIndex = Array.IndexOf(ColorMap.MajorColors, colorModel.MajorColor);
+            int minorIndex = Array.IndexOf(ColorMap.MinorColors, colorModel.MinorColor);
 
             if (majorIndex == -1 || minorIndex == -1)
             {
