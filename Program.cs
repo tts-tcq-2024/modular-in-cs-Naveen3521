@@ -13,7 +13,7 @@ namespace TelCo.ColorCoder
         private static void TestColorUtility()
         {
             int pairNumber = 4;
-            ColorPair testPair1 = ColorUtility.GetColorFromPairNumber(pairNumber);
+            ColorModel testPair1 = ColorUtility.GetColorFromPairNumber(pairNumber);
             Console.WriteLine($"[In] Pair Number: {pairNumber}, [Out] Colors: {testPair1}\n");
             Debug.Assert(testPair1.MajorColor == Color.White);
             Debug.Assert(testPair1.MinorColor == Color.Brown);
@@ -30,12 +30,12 @@ namespace TelCo.ColorCoder
             Debug.Assert(testPair1.MajorColor == Color.Violet);
             Debug.Assert(testPair1.MinorColor == Color.Green);
 
-            ColorPair testPair2 = new ColorPair { MajorColor = Color.Yellow, MinorColor = Color.Green };
+            ColorModel testPair2 = new ColorModel { MajorColor = Color.Yellow, MinorColor = Color.Green };
             pairNumber = ColorUtility.GetPairNumberFromColor(testPair2);
             Console.WriteLine($"[In] Colors: {testPair2}, [Out] PairNumber: {pairNumber}\n");
             Debug.Assert(pairNumber == 18);
 
-            testPair2 = new ColorPair { MajorColor = Color.Red, MinorColor = Color.Blue };
+            testPair2 = new ColorModel { MajorColor = Color.Red, MinorColor = Color.Blue };
             pairNumber = ColorUtility.GetPairNumberFromColor(testPair2);
             Console.WriteLine($"[In] Colors: {testPair2}, [Out] PairNumber: {pairNumber}");
             Debug.Assert(pairNumber == 6);
