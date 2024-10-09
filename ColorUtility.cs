@@ -13,7 +13,7 @@ namespace TelCo.ColorCoder
             {
                 throw new ArgumentOutOfRangeException($"Argument PairNumber: {pairNumber} is outside the allowed range.");
             }
-
+            //indexing from zero 
             int zeroBasedPairNumber = pairNumber - 1;
             int majorIndex = zeroBasedPairNumber / minorSize;
             int minorIndex = zeroBasedPairNumber % minorSize;
