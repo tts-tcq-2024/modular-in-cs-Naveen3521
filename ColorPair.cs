@@ -1,6 +1,6 @@
 using System.Drawing;
 
-namespace TelCo.ColorCoder.Models
+namespace TelCo.ColorCoder
 {
     public class ColorPair
     {
@@ -12,8 +12,5 @@ namespace TelCo.ColorCoder.Models
             MajorColor = majorColor;
             MinorColor = minorColor;
         }
-
-        public override string ToString() =>
-            $"MajorColor: {MajorColor.Name}, MinorColor: {MinorColor.Name}";
     }
 }
