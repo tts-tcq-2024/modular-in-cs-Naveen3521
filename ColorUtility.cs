@@ -18,8 +18,8 @@ namespace TelCo.ColorCoder
 
         public static int GetPairNumberFromColor(ColorPair pair)
         {
-            int majorIndex = Array.IndexOf(ColorData.MajorColorsArray, pair.MajorColor);
-            int minorIndex = Array.IndexOf(ColorData.MinorColorsArray, pair.MinorColor);
+            int majorIndex = Array.IndexOf(ColorData.MajorColors, pair.MajorColor);
+            int minorIndex = Array.IndexOf(ColorData.MinorColors, pair.MinorColor);
             if (majorIndex == -1 || minorIndex == -1)
                 throw new ArgumentException($"Unknown Colors: {pair}");
             return (majorIndex * minorSize) + (minorIndex + 1);
