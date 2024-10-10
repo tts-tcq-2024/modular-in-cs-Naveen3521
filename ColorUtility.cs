@@ -4,8 +4,8 @@ namespace TelCo.ColorCoder
 {
     public static class ColorUtility
     {
-        private static readonly int minorSize = ColorData.MinorColorsArray.Length;
-        private static readonly int majorSize = ColorData.MajorColorsArray.Length;
+        private static readonly int minorSize = ColorData.MinorColors.Length;
+        private static readonly int majorSize = ColorData.MajorColors.Length;
 
         public static ColorPair GetColorFromPairNumber(int pairNumber)
         {
@@ -13,7 +13,7 @@ namespace TelCo.ColorCoder
             int zeroBasedPairNumber = pairNumber - 1;
             int majorIndex = zeroBasedPairNumber / minorSize;
             int minorIndex = zeroBasedPairNumber % minorSize;
-            return new ColorPair(ColorData.MajorColorsArray[majorIndex], ColorData.MinorColorsArray[minorIndex]);
+             return new ColorPair(ColorData.MajorColors[majorIndex], ColorData.MinorColors[minorIndex]);
         }
 
         public static int GetPairNumberFromColor(ColorPair pair)
