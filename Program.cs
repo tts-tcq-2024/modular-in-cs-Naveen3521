@@ -5,10 +5,7 @@ namespace TelCo.ColorCoder
 {
     class Program
     {
-        private static void Main(string[] args)
-        {
-            RunTests();
-        }
+        private static void Main(string[] args) => RunTests();
 
         private static void RunTests()
         {
