@@ -5,7 +5,7 @@ namespace TelCo.ColorCoder
 {
     public static class ColorData
     {
-        public static readonly Color[] MajorColorsArray =
+        public static readonly Color[] MajorColors  =
         {
             Color.White,
             Color.Red,
@@ -14,7 +14,7 @@ namespace TelCo.ColorCoder
             Color.Violet
         };
 
-        public static readonly Color[] MinorColorsArray =
+        public static readonly Color[] MinorColors  =
         {
             Color.Blue,
             Color.Orange,
