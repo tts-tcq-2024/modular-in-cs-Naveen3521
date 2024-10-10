@@ -1,4 +1,3 @@
-using System;
 using System.Diagnostics;
 using System.Drawing;
 
@@ -8,32 +7,39 @@ namespace TelCo.ColorCoder
     {
         private static void Main(string[] args)
         {
-            int pairNumber = 4;
-            ColorPair testPair1 = Program.GetColorFromPairNumber(pairNumber);
-            Console.WriteLine("[In]Pair Number: {0},[Out] Colors: {1}\n", pairNumber, testPair1);
-            Debug.Assert(testPair1.majorColor == Color.White);
-            Debug.Assert(testPair1.minorColor == Color.Brown);
- 
-            pairNumber = 5;
-            testPair1 = Program.GetColorFromPairNumber(pairNumber);
-            Console.WriteLine("[In]Pair Number: {0},[Out] Colors: {1}\n", pairNumber, testPair1);
-            Debug.Assert(testPair1.majorColor == Color.White);
-            Debug.Assert(testPair1.minorColor == Color.SlateGray);
- 
-            pairNumber = 23;
-            testPair1 = Program.GetColorFromPairNumber(pairNumber);
-            Console.WriteLine("[In]Pair Number: {0},[Out] Colors: {1}\n", pairNumber, testPair1);
-            Debug.Assert(testPair1.majorColor == Color.Violet);
-            Debug.Assert(testPair1.minorColor == Color.Green);
- 
-            ColorPair testPair2 = new ColorPair() { majorColor = Color.Yellow, minorColor = Color.Green };
-            pairNumber = Program.GetPairNumberFromColor(testPair2);
-            Console.WriteLine("[In]Colors: {0}, [Out] PairNumber: {1}\n", testPair2, pairNumber);
-            Debug.Assert(pairNumber == 18);
- 
-            testPair2 = new ColorPair() { majorColor = Color.Red, minorColor = Color.Blue };
-            pairNumber = Program.GetPairNumberFromColor(testPair2);
-            Console.WriteLine("[In]Colors: {0}, [Out] PairNumber: {1}", testPair2, pairNumber);
-            Debug.Assert(pairNumber == 6);
-        }    
+            RunTests();
+        }
+
+        private static void RunTests()
+        {
+            TestGetColorFromPairNumber();
+            TestGetPairNumberFromColor();
+        }
+
+        private static void TestGetColorFromPairNumber()
+        {
+            ValidateColor(4, Color.White, Color.Brown);
+            ValidateColor(5, Color.White, Color.SlateGray);
+            ValidateColor(23, Color.Violet, Color.Green);
+        }
+
+        private static void ValidateColor(int pairNumber, Color expectedMajor, Color expectedMinor)
+        {
+            ColorPair testPair = ColorUtility.GetColorFromPairNumber(pairNumber);
+            Debug.Assert(testPair.MajorColor == expectedMajor);
+            Debug.Assert(testPair.MinorColor == expectedMinor);
+        }
+
+        private static void TestGetPairNumberFromColor()
+        {
+            ValidatePairNumber(new ColorPair(Color.Yellow, Color.Green), 18);
+            ValidatePairNumber(new ColorPair(Color.Red, Color.Blue), 6);
+        }
+
+        private static void ValidatePairNumber(ColorPair pair, int expectedNumber)
+        {
+            int pairNumber = ColorUtility.GetPairNumberFromColor(pair);
+            Debug.Assert(pairNumber == expectedNumber);
+        }
+    }
 }
